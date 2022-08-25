@@ -1,23 +1,17 @@
-const numberFirst= +prompt('Enter your first number');
-const numberSecond= +prompt('Enter your second number');
-const actionType= prompt('Choose your action * / + - ');
-const checkNumber=(num)=>{ return !Number.isNaN(num)};
-const result=()=>{
-const isFirstNumber= checkNumber (numberFirst);
-const isSecondNumber= checkNumber (numberSecond);
-const isAction=(actionType==="*")||(actionType==="/")||(actionType==="+")||(actionType==="-");
-if (isFirstNumber&&isSecondNumber&&isAction){
-if (actionType==="*"){
-    return numberFirst * numberSecond}
-    else if (actionType==="/"){
-        return numberFirst / numberSecond}
-        else if (actionType==="+"){
-            return numberFirst + numberSecond}
-            else if (actionType==="-"){
-                return numberFirst - numberSecond}
+"use strict"
+const correctEmail = `admin@test.io`;
+const correctPassword = `admin1234`;
+const loginUser = () => {
+    const email = prompt(`Enter your email`);
+    if (email === correctEmail) {
+        const password = prompt(`Enter your password`);
+        if (password === correctPassword) {
+            alert(`Your login is sucsessful`)
+        } else {
+            alert(`Your password incorrect`)
+        }
+    } else {
+        alert('Your email is incorrect')
+    }
 }
-else{return "This operation is not exist"}
-}
-
-alert(result());
-console.log(result);
+loginUser();
